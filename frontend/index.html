@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Interactive Olist Brazilian e-commerce analytics dashboard">
+    <title>Olist Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <script src="js/vendor/chart.umd.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">O</div>
+        <div>
+          <p class="eyebrow">Olist Brazilian e-commerce</p>
+          <h1>Analytics dashboard</h1>
+          <p class="subtitle">A decision-ready view of sales, customers, and delivery performance.</p>
+        </div>
+      </div>
+      <div class="source-note">
+        <span class="source-dot"></span>
+        <span>Validated star schema · delivered-order metrics</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <nav class="view-nav panel" aria-label="Dashboard views">
+        <button class="nav-button active" data-view="overview" type="button">Overview</button>
+        <button class="nav-button" data-view="products" type="button">Products &amp; categories</button>
+        <button class="nav-button" data-view="customers" type="button">Customers &amp; delivery</button>
+      </nav>
+
+      <section class="controls panel" aria-label="Dashboard filters">
+        <div class="control-heading">
+          <p class="eyebrow">Explore the data</p>
+          <span id="scope-note">All delivered orders · 2016–2018</span>
+        </div>
+        <label>
+          Trend year
+          <select id="year-filter">
+            <option value="all">All years</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+          </select>
+        </label>
+        <label>
+          Category
+          <select id="category-filter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
+        <button id="reset-filters" class="button-secondary" type="button">Reset filters</button>
+        <span id="refresh-note" class="refresh-note">Data refresh: —</span>
+      </section>
+
+      <section id="status" class="status" role="status">Loading dashboard data…</section>
+
+      <section id="overview-page" class="dashboard-page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">01 · Executive view</p>
+            <h2>How is the business performing?</h2>
+          </div>
+          <p>Use the year filter to compare the complete 2017–2018 trend window. The category filter applies to product tables and charts only.</p>
+        </div>
+
+        <section class="kpi-grid" aria-label="Executive key performance indicators">
+          <article class="kpi-card panel"><span>Delivered revenue</span><strong id="revenue-kpi">—</strong><small>Item price, freight excluded</small></article>
+          <article class="kpi-card panel"><span>Delivered orders</span><strong id="orders-kpi">—</strong><small>Orders with delivered status</small></article>
+          <article class="kpi-card panel"><span>Average order value</span><strong id="aov-kpi">—</strong><small>Delivered revenue / orders</small></article>
+          <article class="kpi-card panel"><span>Repeat-buyer rate</span><strong id="repeat-kpi">—</strong><small>People with 2+ delivered orders</small></article>
+          <article class="kpi-card panel"><span>Late delivery rate</span><strong id="late-kpi">—</strong><small>Orders with a valid delivery date</small></article>
+        </section>
+
+        <section class="chart-grid">
+          <article class="panel chart-card chart-wide">
+            <div class="card-heading"><div><p class="eyebrow">Trend</p><h3>Revenue and delivered orders</h3></div><span class="chart-caption">Purchase month</span></div>
+            <div class="chart-container chart-tall"><canvas id="trend-chart"></canvas></div>
+          </article>
+          <article class="panel chart-card">
+            <div class="card-heading"><div><p class="eyebrow">Growth</p><h3>January–August year-over-year</h3></div></div>
+            <div class="chart-container"><canvas id="yoy-chart"></canvas></div>
+          </article>
+          <article class="panel chart-card">
+            <div class="card-heading"><div><p class="eyebrow">Mix</p><h3>Payment value</h3></div><span class="chart-caption">Delivered orders</span></div>
+            <div class="chart-container"><canvas id="payment-chart"></canvas></div>
+          </article>
+          <article class="panel chart-card chart-wide">
+            <div class="card-heading"><div><p class="eyebrow">Customer experience</p><h3>Delivery timing and review score</h3></div><span class="chart-caption">Average review score · 1 to 5</span></div>
+            <div class="chart-container"><canvas id="delay-chart"></canvas></div>
+          </article>
+        </section>
+
+        <section class="panel table-card">
+          <div class="card-heading"><div><p class="eyebrow">Product performance</p><h3>Top categories by delivered revenue</h3></div><span id="overview-category-summary" class="chart-caption"></span></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Rank</th><th>Category</th><th>Items sold</th><th>Revenue</th><th>Share</th><th>Freight burden</th></tr></thead>
+              <tbody id="overview-category-table"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="products-page" class="dashboard-page" hidden>
+        <div class="page-heading">
+          <div><p class="eyebrow">02 · Product and category performance</p><h2>Which categories drive revenue and freight pressure?</h2></div>
+          <p>Freight burden is a proxy for cost pressure, not margin.</p>
+        </div>
+        <section class="kpi-grid kpi-grid-four">
+          <article class="kpi-card panel"><span>Top category</span><strong id="top-category-kpi">—</strong><small id="top-category-detail">—</small></article>
+          <article class="kpi-card panel"><span>Top 10 revenue share</span><strong id="pareto-kpi">—</strong><small>Delivered category revenue</small></article>
+          <article class="kpi-card panel"><span>Highest freight burden</span><strong id="freight-kpi">—</strong><small id="freight-detail">Minimum 100 items</small></article>
+          <article class="kpi-card panel"><span>Categories with sales</span><strong id="category-count-kpi">—</strong><small>English category labels</small></article>
+        </section>
+        <section class="chart-grid">
+          <article class="panel chart-card chart-wide"><div class="card-heading"><div><p class="eyebrow">Pareto</p><h3>Revenue concentration by category</h3></div></div><div class="chart-container chart-tall"><canvas id="category-chart"></canvas></div></article>
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Freight proxy</p><h3>Highest freight burden</h3></div></div><div class="chart-container"><canvas id="freight-chart"></canvas></div></article>
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Selected category</p><h3>Revenue, items, and freight</h3></div></div><div class="chart-container"><canvas id="selected-category-chart"></canvas></div></article>
+        </section>
+        <section class="panel table-card">
+          <div class="card-heading"><div><p class="eyebrow">Ranking table</p><h3>Category detail</h3></div><span id="products-category-summary" class="chart-caption"></span></div>
+          <div class="table-tools">
+            <label class="table-search">
+              Search categories
+              <input id="category-search" type="search" placeholder="Type a category">
+            </label>
+            <label>
+              Show rows
+              <select id="category-limit"><option value="10">10</option><option value="20" selected>20</option><option value="all">All</option></select>
+            </label>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Category</th><th>Items sold</th><th>Orders</th><th>Revenue</th><th>Share</th><th>Freight burden</th></tr></thead><tbody id="products-category-table"></tbody></table></div>
+        </section>
+      </section>
+
+      <section id="customers-page" class="dashboard-page" hidden>
+        <div class="page-heading">
+          <div><p class="eyebrow">03 · Customer and delivery insights</p><h2>Where are retention and service risks?</h2></div>
+          <p>Retention is right-censored so only customers with enough follow-up time are included.</p>
+        </div>
+        <section class="kpi-grid kpi-grid-four">
+          <article class="kpi-card panel"><span>Repeat buyers</span><strong id="repeat-buyers-kpi">—</strong><small id="repeat-buyers-detail">—</small></article>
+          <article class="kpi-card panel"><span>Return within 30 days</span><strong id="return-30-kpi">—</strong><small>Eligible people only</small></article>
+          <article class="kpi-card panel"><span>Return within 180 days</span><strong id="return-180-kpi">—</strong><small>Eligible people only</small></article>
+          <article class="kpi-card panel"><span>Highest state late rate</span><strong id="worst-state-kpi">—</strong><small id="worst-state-detail">Minimum 300 delivered orders</small></article>
+        </section>
+        <section class="chart-grid">
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Repeat behavior</p><h3>Delivered orders per person</h3></div></div><div class="chart-container"><canvas id="repeat-chart"></canvas></div></article>
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Cohorts</p><h3>Return rate by first-order cohort</h3></div></div><div class="chart-container"><canvas id="cohort-chart"></canvas></div></article>
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Customer state</p><h3>Late delivery rate by state</h3></div></div><div class="chart-container"><canvas id="state-chart"></canvas></div></article>
+          <article class="panel chart-card"><div class="card-heading"><div><p class="eyebrow">Service quality</p><h3>Review score by delivery timing</h3></div></div><div class="chart-container"><canvas id="customer-delay-chart"></canvas></div></article>
+        </section>
+        <section class="table-grid">
+          <article class="panel table-card"><div class="card-heading"><div><p class="eyebrow">State performance</p><h3>Delivery performance by customer state</h3></div></div><div class="table-tools"><label class="table-search">Search states<input id="state-search" type="search" placeholder="e.g. SP"></label><label>Sort by<select id="state-sort"><option value="late">Late rate</option><option value="orders">Orders</option><option value="revenue">Revenue share</option></select></label><label>Show rows<select id="state-limit"><option value="10" selected>10</option><option value="all">All</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>State</th><th>Orders</th><th>Late rate</th><th>Avg delay</th><th>Review</th><th>Revenue share</th></tr></thead><tbody id="state-table"></tbody></table></div></article>
+          <article class="panel table-card"><div class="card-heading"><div><p class="eyebrow">Seller performance</p><h3>Highest late rates among qualified sellers</h3></div></div><div class="table-tools"><label class="table-search">Search sellers<input id="seller-search" type="search" placeholder="Seller ID or state"></label><label>Sort by<select id="seller-sort"><option value="late">Late rate</option><option value="orders">Orders</option><option value="review">Review score</option></select></label><label>Show rows<select id="seller-limit"><option value="10" selected>10</option><option value="all">All</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>Seller</th><th>State</th><th>Orders</th><th>Late rate</th><th>Review</th></tr></thead><tbody id="seller-table"></tbody></table></div></article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

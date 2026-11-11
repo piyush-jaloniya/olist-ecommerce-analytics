@@ -1,0 +1,74 @@
+[
+  {
+    "bucket_order": 1,
+    "delay_bucket": "10+ days early",
+    "orders": 61523,
+    "avg_review_score": 4.32,
+    "pct_low_reviews": 8.9,
+    "pct_five_star": 64.0,
+    "avg_delay_days": -17.0
+  },
+  {
+    "bucket_order": 2,
+    "delay_bucket": "1-9 days early",
+    "orders": 26640,
+    "avg_review_score": 4.23,
+    "pct_low_reviews": 10.0,
+    "pct_five_star": 58.9,
+    "avg_delay_days": -6.1
+  },
+  {
+    "bucket_order": 3,
+    "delay_bucket": "on the estimated date",
+    "orders": 1280,
+    "avg_review_score": 4.03,
+    "pct_low_reviews": 12.4,
+    "pct_five_star": 50.6,
+    "avg_delay_days": 0.0
+  },
+  {
+    "bucket_order": 4,
+    "delay_bucket": "1-7 days late",
+    "orders": 3600,
+    "avg_review_score": 2.71,
+    "pct_low_reviews": 49.4,
+    "pct_five_star": 23.9,
+    "avg_delay_days": 3.6
+  },
+  {
+    "bucket_order": 5,
+    "delay_bucket": "8+ days late",
+    "orders": 2781,
+    "avg_review_score": 1.7,
+    "pct_low_reviews": 79.3,
+    "pct_five_star": 7.0,
+    "avg_delay_days": 19.4
+  },
+  {
+    "bucket_order": 6,
+    "delay_bucket": "SUMMARY: late (1+ days)",
+    "orders": 6381,
+    "avg_review_score": 2.27,
+    "pct_low_reviews": 62.4,
+    "pct_five_star": 16.5,
+    "avg_delay_days": 10.5
+  },
+  {
+    "bucket_order": 7,
+    "delay_bucket": "SUMMARY: not late (0 days or earlier)",
+    "orders": 89443,
+    "avg_review_score": 4.29,
+    "pct_low_reviews": 9.3,
+    "pct_five_star": 62.3,
+    "avg_delay_days": -13.5
+  },
+  {
+    "bucket_order": 8,
+    "delay_bucket": "SUMMARY: all delivered orders with a review",
+    "orders": 95824,
+    "avg_review_score": 4.16,
+    "pct_low_reviews": 12.8,
+    "pct_five_star": 59.2,
+    "avg_delay_days": -11.9
+  }
+]

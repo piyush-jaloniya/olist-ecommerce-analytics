@@ -1,0 +1,9 @@
+bucket_order,delay_bucket,orders,avg_review_score,pct_low_reviews,pct_five_star,avg_delay_days
+1,10+ days early,61523,4.32,8.9,64.0,-17.0
+2,1-9 days early,26640,4.23,10.0,58.9,-6.1
+3,on the estimated date,1280,4.03,12.4,50.6,0.0
+4,1-7 days late,3600,2.71,49.4,23.9,3.6
+5,8+ days late,2781,1.7,79.3,7.0,19.4
+6,SUMMARY: late (1+ days),6381,2.27,62.4,16.5,10.5
+7,SUMMARY: not late (0 days or earlier),89443,4.29,9.3,62.3,-13.5
+8,SUMMARY: all delivered orders with a review,95824,4.16,12.8,59.2,-11.9

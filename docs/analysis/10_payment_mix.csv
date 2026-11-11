@@ -1,0 +1,12 @@
+section_order,section,group_order,payment_group,payments,pct_of_payments,orders,payment_value,pct_of_value,avg_payment_value
+1,by payment type,1,credit_card,74586,74.03,74304,12101094.88,78.46,162.24
+1,by payment type,2,boleto,19191,19.05,19191,2769932.58,17.96,144.33
+1,by payment type,3,voucher,5493,5.45,3679,343013.19,2.22,62.45
+1,by payment type,4,debit_card,1486,1.47,1485,208421.12,1.35,140.26
+2,credit card by installments,1,1 installment (or none),24761,24.58,24713,2367149.36,15.35,95.6
+2,credit card by installments,2,2-3 installments,22239,22.07,22189,2971869.74,19.27,133.63
+2,credit card by installments,3,4-6 installments,15790,15.67,15757,2849773.9,18.48,180.48
+2,credit card by installments,4,7-10 installments,11467,11.38,11434,3794058.86,24.6,330.87
+2,credit card by installments,5,11+ installments,329,0.33,329,118243.02,0.77,359.4
+3,orders by number of payment types,1,orders paid with one payment type,95525,94.81,94295,15097866.29,97.9,158.05
+3,orders by number of payment types,2,orders paid with 2+ payment types,5231,5.19,2182,324595.48,2.1,62.05

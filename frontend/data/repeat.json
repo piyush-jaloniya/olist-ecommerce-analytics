@@ -1,0 +1,72 @@
+[
+  {
+    "bucket_order": 1,
+    "orders_per_person": "1",
+    "people": 90557,
+    "pct_of_people": 97.0,
+    "orders": 90557,
+    "pct_of_orders": 93.86,
+    "revenue": 12493089.36,
+    "pct_of_revenue": 94.49
+  },
+  {
+    "bucket_order": 2,
+    "orders_per_person": "2",
+    "people": 2573,
+    "pct_of_people": 2.76,
+    "orders": 5146,
+    "pct_of_orders": 5.33,
+    "revenue": 631274.9,
+    "pct_of_revenue": 4.77
+  },
+  {
+    "bucket_order": 3,
+    "orders_per_person": "3",
+    "people": 181,
+    "pct_of_people": 0.19,
+    "orders": 543,
+    "pct_of_orders": 0.56,
+    "revenue": 65974.42,
+    "pct_of_revenue": 0.5
+  },
+  {
+    "bucket_order": 4,
+    "orders_per_person": "4",
+    "people": 28,
+    "pct_of_people": 0.03,
+    "orders": 112,
+    "pct_of_orders": 0.12,
+    "revenue": 18946.73,
+    "pct_of_revenue": 0.14
+  },
+  {
+    "bucket_order": 5,
+    "orders_per_person": "5 or more",
+    "people": 19,
+    "pct_of_people": 0.02,
+    "orders": 120,
+    "pct_of_orders": 0.12,
+    "revenue": 12212.7,
+    "pct_of_revenue": 0.09
+  },
+  {
+    "bucket_order": 6,
+    "orders_per_person": "SUMMARY: repeat buyers (2 or more)",
+    "people": 2801,
+    "pct_of_people": 3.0,
+    "orders": 5921,
+    "pct_of_orders": 6.14,
+    "revenue": 728408.75,
+    "pct_of_revenue": 5.51
+  },
+  {
+    "bucket_order": 7,
+    "orders_per_person": "SUMMARY: all buyers",
+    "people": 93358,
+    "pct_of_people": 100.0,
+    "orders": 96478,
+    "pct_of_orders": 100.0,
+    "revenue": 13221498.11,
+    "pct_of_revenue": 100.0
+  }
+]

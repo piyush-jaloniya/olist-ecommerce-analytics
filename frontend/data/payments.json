@@ -1,0 +1,26 @@
+[
+  {
+    "payment_type": "credit_card",
+    "payments": 74586,
+    "payment_value": 12101094.88,
+    "pct_of_value": 78.46
+  },
+  {
+    "payment_type": "boleto",
+    "payments": 19191,
+    "payment_value": 2769932.58,
+    "pct_of_value": 17.96
+  },
+  {
+    "payment_type": "voucher",
+    "payments": 5493,
+    "payment_value": 343013.19,
+    "pct_of_value": 2.22
+  },
+  {
+    "payment_type": "debit_card",
+    "payments": 1486,
+    "payment_value": 208421.12,
+    "pct_of_value": 1.35
+  }
+]

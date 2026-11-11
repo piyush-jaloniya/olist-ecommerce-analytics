@@ -1,0 +1,330 @@
+// =============================================================================
+// Olist Power BI: calculated columns and measures
+// Project: olist-analytics-pipeline (Phase 5)
+//
+// HOW TO USE: follow powerbi/BUILD_GUIDE.md. Create the 5 calculated columns of PART 1
+// (Table tools > New column), then the measures of PART 2 (Home > New measure). Every
+// measure below belongs in a table called _Measures (see the guide).
+// Each definition is "Name = expression"; type only the part after the first "=" into the
+// formula bar when Power BI already asks for the name, or paste the whole line.
+//
+// DEFINITIONS (identical to the SQL analysis in sql/analysis and docs/analysis):
+//   - Delivered orders only (is_delivered = 1). Revenue = sum of item price; freight is
+//     separate and never part of revenue.
+//   - Order-grain measures read fact_orders; product/category measures read fact_order_items
+//     (a filter on dim_product reaches only the item table, never fact_orders).
+//   - A person is a customer_unique_id.
+//   - Minimum volumes for rankings: 100 delivered items (category), 300 delivered orders
+//     (state). Below the minimum the "Min" measures return BLANK.
+// NOTE ON BLANKS: in DAX a blank compares equal to 0, so every filter on a column that can be
+// blank (review_score, delivery_delay_days) is written so that blanks cannot slip through.
+// =============================================================================
+
+
+// -----------------------------------------------------------------------------
+// PART 1: CALCULATED COLUMNS
+// -----------------------------------------------------------------------------
+
+// ---- Table: fact_orders ------------------------------------------------------
+
+// The person behind the order (needed to count buyers and repeat buyers).
+customer_unique_id = RELATED ( dim_customer[customer_unique_id] )
+
+// Delay bucket order (1 = earliest). Blank when the order has no valid delay.
+// ISBLANK must come first, because a blank would otherwise match "= 0".
+delay_bucket_order =
+SWITCH (
+    TRUE (),
+    ISBLANK ( fact_orders[delivery_delay_days] ), BLANK (),
+    fact_orders[delivery_delay_days] <= -10, 1,
+    fact_orders[delivery_delay_days] < 0, 2,
+    fact_orders[delivery_delay_days] = 0, 3,
+    fact_orders[delivery_delay_days] <= 7, 4,
+    5
+)
+
+// Delay bucket label. In the model, set "Sort by column" = delay_bucket_order.
+delay_bucket =
+SWITCH (
+    fact_orders[delay_bucket_order],
+    1, "10+ days early",
+    2, "1-9 days early",
+    3, "on the estimated date",
+    4, "1-7 days late",
+    5, "8+ days late"
+)
+
+// ---- Table: fact_order_payments ---------------------------------------------
+
+installment_group_order =
+SWITCH (
+    TRUE (),
+    fact_order_payments[payment_installments] <= 1, 1,
+    fact_order_payments[payment_installments] <= 3, 2,
+    fact_order_payments[payment_installments] <= 6, 3,
+    fact_order_payments[payment_installments] <= 10, 4,
+    5
+)
+
+// In the model, set "Sort by column" = installment_group_order.
+installment_group =
+SWITCH (
+    fact_order_payments[installment_group_order],
+    1, "1 installment (or none)",
+    2, "2-3 installments",
+    3, "4-6 installments",
+    4, "7-10 installments",
+    5, "11+ installments"
+)
+
+
+// -----------------------------------------------------------------------------
+// PART 2: MEASURES (home table: _Measures)
+// -----------------------------------------------------------------------------
+
+// ======== A. Orders, revenue and growth (order grain, fact_orders) ==============
+
+// Format: whole number, thousands separator
+Orders Placed = COUNTROWS ( fact_orders )
+
+// Format: whole number, thousands separator
+Delivered Orders =
+CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals, thousands separator
+Delivered Revenue =
+CALCULATE ( SUM ( fact_orders[items_price_total] ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals, thousands separator
+Delivered Freight =
+CALCULATE ( SUM ( fact_orders[items_freight_total] ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals
+Avg Order Value = DIVIDE ( [Delivered Revenue], [Delivered Orders] )
+
+// Format: decimal number, 2 decimals, thousands separator
+Revenue Prev Month =
+CALCULATE ( [Delivered Revenue], DATEADD ( dim_date[full_date], -1, MONTH ) )
+
+// Month-over-month growth, shown only for a single month after 2017-01 (the first month of
+// the trend window, so 2017-01 is blank, as in query 01).
+// Format: percentage, 1 decimal
+Revenue MoM % =
+IF (
+    HASONEVALUE ( dim_date[year_month] )
+        && MIN ( dim_date[full_date] ) > DATE ( 2017, 1, 31 ),
+    DIVIDE ( [Delivered Revenue] - [Revenue Prev Month], [Revenue Prev Month] ),
+    BLANK ()
+)
+
+// Format: decimal number, 2 decimals, thousands separator
+Revenue Same Period LY =
+CALCULATE ( [Delivered Revenue], SAMEPERIODLASTYEAR ( dim_date[full_date] ) )
+
+// Year-over-year growth for the dates in the current filter (for query 02, set the date
+// slicer to 2018-01-01 .. 2018-08-31).
+// Format: percentage, 1 decimal
+Revenue YoY % =
+DIVIDE ( [Delivered Revenue] - [Revenue Same Period LY], [Revenue Same Period LY] )
+
+// Format: whole number, thousands separator
+Orders Same Period LY =
+CALCULATE ( [Orders Placed], SAMEPERIODLASTYEAR ( dim_date[full_date] ) )
+
+// Format: percentage, 1 decimal
+Orders YoY % =
+DIVIDE ( [Orders Placed] - [Orders Same Period LY], [Orders Same Period LY] )
+
+// Delivered revenue by the month the order ARRIVED, not the month it was placed. It uses the
+// inactive relationship fact_orders[delivered_date_key] -> dim_date[date_key].
+// Format: decimal number, 2 decimals, thousands separator
+Revenue by Delivery Month =
+CALCULATE (
+    [Delivered Revenue],
+    USERELATIONSHIP ( fact_orders[delivered_date_key], dim_date[date_key] )
+)
+
+
+// ======== B. Delivery and reviews (order grain, fact_orders) =====================
+
+// Delivered orders that have a valid delay (8 delivered orders have no delivery date).
+// COUNT ignores blanks, so this counts the orders where is_late is 0 or 1.
+// Format: whole number, thousands separator
+Orders With Delay =
+CALCULATE ( COUNT ( fact_orders[is_late] ), fact_orders[is_delivered] = 1 )
+
+// Format: whole number, thousands separator
+Late Orders =
+CALCULATE ( SUM ( fact_orders[is_late] ), fact_orders[is_delivered] = 1 )
+
+// Format: percentage, 1 decimal
+Late Rate % = DIVIDE ( [Late Orders], [Orders With Delay] )
+
+// Blank below 300 delivered orders (same minimum as query 08).
+// Format: percentage, 1 decimal
+Late Rate % Min 300 Orders =
+IF ( [Delivered Orders] >= 300, [Late Rate %], BLANK () )
+
+// Whole days from the estimated date; negative = early.
+// Format: decimal number, 1 decimal
+Avg Delay Days =
+CALCULATE ( AVERAGE ( fact_orders[delivery_delay_days] ), fact_orders[is_delivered] = 1 )
+
+// Delivered orders that have a review.
+// Format: whole number, thousands separator
+Reviewed Orders =
+CALCULATE ( COUNT ( fact_orders[review_score] ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals
+Avg Review Score =
+CALCULATE ( AVERAGE ( fact_orders[review_score] ), fact_orders[is_delivered] = 1 )
+
+// Share of 1-2 star reviews. The ">= 1" filter keeps blank (no review) out.
+// Format: percentage, 1 decimal
+Low Review Share % =
+DIVIDE (
+    CALCULATE (
+        COUNTROWS ( fact_orders ),
+        fact_orders[is_delivered] = 1,
+        fact_orders[review_score] >= 1,
+        fact_orders[review_score] <= 2
+    ),
+    [Reviewed Orders]
+)
+
+// Format: percentage, 1 decimal
+Five Star Share % =
+DIVIDE (
+    CALCULATE (
+        COUNTROWS ( fact_orders ),
+        fact_orders[is_delivered] = 1,
+        fact_orders[review_score] = 5
+    ),
+    [Reviewed Orders]
+)
+
+
+// ======== C. Customers (order grain, fact_orders) ================================
+
+// People with at least one delivered order.
+// Format: whole number, thousands separator
+Buyers =
+CALCULATE ( DISTINCTCOUNT ( fact_orders[customer_unique_id] ), fact_orders[is_delivered] = 1 )
+
+// People with 2 or more delivered orders. The inner CALCULATE counts each person's delivered
+// orders (context transition on the current customer_unique_id).
+// Format: whole number, thousands separator
+Repeat Buyers =
+COUNTROWS (
+    FILTER (
+        ADDCOLUMNS (
+            VALUES ( fact_orders[customer_unique_id] ),
+            "n_orders", CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[is_delivered] = 1 )
+        ),
+        [n_orders] >= 2
+    )
+)
+
+// Format: percentage, 2 decimals
+Repeat Rate % = DIVIDE ( [Repeat Buyers], [Buyers] )
+
+
+// ======== D. Products and categories (item grain, fact_order_items) ==============
+
+// Format: whole number, thousands separator
+Items Sold =
+CALCULATE ( COUNTROWS ( fact_order_items ), fact_order_items[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals, thousands separator
+Item Revenue =
+CALCULATE ( SUM ( fact_order_items[price] ), fact_order_items[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals, thousands separator
+Item Freight =
+CALCULATE ( SUM ( fact_order_items[freight_value] ), fact_order_items[is_delivered] = 1 )
+
+// The data has no product cost, so this is a proxy for cost pressure, NOT a margin.
+// Format: percentage, 1 decimal
+Freight % of Price = DIVIDE ( [Item Freight], [Item Revenue] )
+
+// Blank below 100 delivered items (same minimum as query 04).
+// Format: percentage, 1 decimal
+Freight % of Price Min 100 Items =
+IF ( [Items Sold] >= 100, [Freight % of Price], BLANK () )
+
+// Share of revenue within the current date/customer filters (all categories = 100%).
+// Format: percentage, 2 decimals
+Revenue Share % =
+DIVIDE ( [Item Revenue], CALCULATE ( [Item Revenue], ALL ( dim_product ) ) )
+
+// 1 = highest revenue; equal revenue shares a rank.
+// Format: whole number
+Revenue Rank =
+RANKX ( ALL ( dim_product[category_name_english] ), [Item Revenue], , DESC, SKIP )
+
+// Pareto running total: share of revenue earned by this category and every category with
+// higher revenue (ties ordered by name, as in query 03). Use it with one category per row.
+// Format: percentage, 2 decimals
+Cumulative Revenue Share % =
+VAR CurrentCategory = SELECTEDVALUE ( dim_product[category_name_english] )
+VAR CurrentRevenue = [Item Revenue]
+VAR Categories = ALL ( dim_product[category_name_english] )
+VAR RankedAbove =
+    FILTER (
+        Categories,
+        VAR r = [Item Revenue]
+        RETURN
+            r > CurrentRevenue
+                || ( r = CurrentRevenue && dim_product[category_name_english] <= CurrentCategory )
+    )
+RETURN
+    IF (
+        ISBLANK ( CurrentCategory ) || ISBLANK ( CurrentRevenue ),
+        BLANK (),
+        DIVIDE (
+            SUMX ( RankedAbove, [Item Revenue] ),
+            CALCULATE ( [Item Revenue], ALL ( dim_product ) )
+        )
+    )
+
+
+// ======== E. Payments (payment grain, delivered orders) =========================
+// The delivered filter sits on fact_orders and reaches fact_order_payments through the
+// relationship fact_orders -> fact_order_payments.
+
+// Format: whole number, thousands separator
+Payments Count =
+CALCULATE ( COUNTROWS ( fact_order_payments ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals, thousands separator
+Payment Value =
+CALCULATE ( SUM ( fact_order_payments[payment_value] ), fact_orders[is_delivered] = 1 )
+
+// Format: decimal number, 2 decimals
+Avg Payment Value = DIVIDE ( [Payment Value], [Payments Count] )
+
+// Share of ALL delivered payments (every payment type and installment group = 100%), as in
+// query 10.
+// Format: percentage, 2 decimals
+Payments Share % =
+DIVIDE ( [Payments Count], CALCULATE ( [Payments Count], ALL ( fact_order_payments ) ) )
+
+// Format: percentage, 2 decimals
+Payment Value Share % =
+DIVIDE ( [Payment Value], CALCULATE ( [Payment Value], ALL ( fact_order_payments ) ) )
+
+// Delivered orders that used 2 or more different payment types.
+// Format: whole number, thousands separator
+Orders Paid With 2+ Payment Types =
+CALCULATE (
+    COUNTROWS (
+        FILTER (
+            ADDCOLUMNS (
+                VALUES ( fact_order_payments[order_key] ),
+                "n_types", CALCULATE ( DISTINCTCOUNT ( fact_order_payments[payment_type] ) )
+            ),
+            [n_types] >= 2
+        )
+    ),
+    fact_orders[is_delivered] = 1
+)

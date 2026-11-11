@@ -1,0 +1,174 @@
+{
+  "generated_at_utc": "2026-11-11T21:45:07+00:00",
+  "source": "data/processed/olist_star.sqlite",
+  "source_stage": "validated SQLite star schema",
+  "static_export": true,
+  "dataset_count": 11,
+  "datasets": {
+    "overview": {
+      "file": "overview.json",
+      "rows": 1,
+      "columns": [
+        "delivered_orders",
+        "delivered_revenue",
+        "delivered_freight",
+        "average_order_value",
+        "buyers",
+        "repeat_buyers",
+        "late_rate_pct"
+      ]
+    },
+    "monthly": {
+      "file": "monthly.json",
+      "rows": 20,
+      "columns": [
+        "year_month",
+        "orders_placed",
+        "delivered_orders",
+        "delivered_revenue",
+        "delivered_freight",
+        "avg_order_value",
+        "revenue_mom_growth_pct"
+      ]
+    },
+    "yoy": {
+      "file": "yoy.json",
+      "rows": 2,
+      "columns": [
+        "year",
+        "orders_placed",
+        "delivered_orders",
+        "delivered_revenue",
+        "delivered_freight",
+        "avg_order_value",
+        "orders_growth_pct",
+        "revenue_growth_pct"
+      ]
+    },
+    "categories": {
+      "file": "categories.json",
+      "rows": 74,
+      "columns": [
+        "category",
+        "items_sold",
+        "orders",
+        "revenue",
+        "avg_item_price",
+        "freight",
+        "revenue_share_pct",
+        "cumulative_share_pct",
+        "revenue_rank"
+      ]
+    },
+    "category_freight": {
+      "file": "category_freight.json",
+      "rows": 74,
+      "columns": [
+        "category",
+        "items_sold",
+        "revenue",
+        "freight",
+        "avg_freight_per_item",
+        "freight_pct_of_price",
+        "meets_min_volume",
+        "freight_burden_rank"
+      ]
+    },
+    "delivery_delay": {
+      "file": "delivery_delay.json",
+      "rows": 8,
+      "columns": [
+        "bucket_order",
+        "delay_bucket",
+        "orders",
+        "avg_review_score",
+        "pct_low_reviews",
+        "pct_five_star",
+        "avg_delay_days"
+      ]
+    },
+    "repeat": {
+      "file": "repeat.json",
+      "rows": 7,
+      "columns": [
+        "bucket_order",
+        "orders_per_person",
+        "people",
+        "pct_of_people",
+        "orders",
+        "pct_of_orders",
+        "revenue",
+        "pct_of_revenue"
+      ]
+    },
+    "cohort": {
+      "file": "cohort.json",
+      "rows": 21,
+      "columns": [
+        "cohort_month",
+        "people",
+        "same_day_order_people",
+        "eligible_30d",
+        "returned_30d",
+        "return_rate_30d_pct",
+        "eligible_90d",
+        "returned_90d",
+        "return_rate_90d_pct",
+        "eligible_180d",
+        "returned_180d",
+        "return_rate_180d_pct"
+      ]
+    },
+    "states": {
+      "file": "states.json",
+      "rows": 27,
+      "columns": [
+        "customer_state",
+        "delivered_orders",
+        "orders_with_delay",
+        "late_orders",
+        "late_rate_pct",
+        "avg_delay_days",
+        "avg_review_score",
+        "delivered_revenue",
+        "revenue_share_pct",
+        "meets_min_volume",
+        "late_rate_rank"
+      ]
+    },
+    "sellers": {
+      "file": "sellers.json",
+      "rows": 2970,
+      "columns": [
+        "seller_id",
+        "seller_state",
+        "delivered_orders",
+        "shared_orders",
+        "orders_with_delay",
+        "late_orders",
+        "late_rate_pct",
+        "avg_delay_days",
+        "avg_review_score",
+        "revenue",
+        "meets_min_volume",
+        "late_rate_rank"
+      ]
+    },
+    "payment_mix": {
+      "file": "payment_mix.json",
+      "rows": 11,
+      "columns": [
+        "section_order",
+        "section",
+        "group_order",
+        "payment_group",
+        "payments",
+        "pct_of_payments",
+        "orders",
+        "payment_value",
+        "pct_of_value",
+        "avg_payment_value"
+      ]
+    }
+  }
+}

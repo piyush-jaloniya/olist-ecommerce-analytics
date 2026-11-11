@@ -1,0 +1,11 @@
+[
+  {
+    "delivered_orders": 96478,
+    "delivered_revenue": 13221498.11,
+    "delivered_freight": 2198275.64,
+    "average_order_value": 137.04,
+    "buyers": 93358,
+    "repeat_buyers": 2801,
+    "late_rate_pct": 6.8
+  }
+]

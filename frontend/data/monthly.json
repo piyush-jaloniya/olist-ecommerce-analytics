@@ -1,0 +1,182 @@
+[
+  {
+    "year_month": "2017-01",
+    "orders_placed": 800,
+    "delivered_orders": 750,
+    "delivered_revenue": 111798.36,
+    "delivered_freight": 15684.01,
+    "avg_order_value": 149.06,
+    "revenue_mom_growth_pct": null
+  },
+  {
+    "year_month": "2017-02",
+    "orders_placed": 1780,
+    "delivered_orders": 1653,
+    "delivered_revenue": 234223.4,
+    "delivered_freight": 37015.92,
+    "avg_order_value": 141.7,
+    "revenue_mom_growth_pct": 109.5
+  },
+  {
+    "year_month": "2017-03",
+    "orders_placed": 2682,
+    "delivered_orders": 2546,
+    "delivered_revenue": 359198.85,
+    "delivered_freight": 55132.1,
+    "avg_order_value": 141.08,
+    "revenue_mom_growth_pct": 53.4
+  },
+  {
+    "year_month": "2017-04",
+    "orders_placed": 2404,
+    "delivered_orders": 2303,
+    "delivered_revenue": 340669.68,
+    "delivered_freight": 50142.72,
+    "avg_order_value": 147.92,
+    "revenue_mom_growth_pct": -5.2
+  },
+  {
+    "year_month": "2017-05",
+    "orders_placed": 3700,
+    "delivered_orders": 3546,
+    "delivered_revenue": 489338.25,
+    "delivered_freight": 77513.15,
+    "avg_order_value": 138.0,
+    "revenue_mom_growth_pct": 43.6
+  },
+  {
+    "year_month": "2017-06",
+    "orders_placed": 3245,
+    "delivered_orders": 3135,
+    "delivered_revenue": 421923.37,
+    "delivered_freight": 68127.0,
+    "avg_order_value": 134.58,
+    "revenue_mom_growth_pct": -13.8
+  },
+  {
+    "year_month": "2017-07",
+    "orders_placed": 4026,
+    "delivered_orders": 3872,
+    "delivered_revenue": 481604.52,
+    "delivered_freight": 84694.56,
+    "avg_order_value": 124.38,
+    "revenue_mom_growth_pct": 14.1
+  },
+  {
+    "year_month": "2017-08",
+    "orders_placed": 4331,
+    "delivered_orders": 4193,
+    "delivered_revenue": 554699.7,
+    "delivered_freight": 91132.66,
+    "avg_order_value": 132.29,
+    "revenue_mom_growth_pct": 15.2
+  },
+  {
+    "year_month": "2017-09",
+    "orders_placed": 4285,
+    "delivered_orders": 4150,
+    "delivered_revenue": 607399.67,
+    "delivered_freight": 93677.82,
+    "avg_order_value": 146.36,
+    "revenue_mom_growth_pct": 9.5
+  },
+  {
+    "year_month": "2017-10",
+    "orders_placed": 4631,
+    "delivered_orders": 4478,
+    "delivered_revenue": 648247.65,
+    "delivered_freight": 102869.36,
+    "avg_order_value": 144.76,
+    "revenue_mom_growth_pct": 6.7
+  },
+  {
+    "year_month": "2017-11",
+    "orders_placed": 7544,
+    "delivered_orders": 7289,
+    "delivered_revenue": 987765.37,
+    "delivered_freight": 165598.83,
+    "avg_order_value": 135.51,
+    "revenue_mom_growth_pct": 52.4
+  },
+  {
+    "year_month": "2017-12",
+    "orders_placed": 5673,
+    "delivered_orders": 5513,
+    "delivered_revenue": 726033.19,
+    "delivered_freight": 117045.1,
+    "avg_order_value": 131.69,
+    "revenue_mom_growth_pct": -26.5
+  },
+  {
+    "year_month": "2018-01",
+    "orders_placed": 7269,
+    "delivered_orders": 7069,
+    "delivered_revenue": 924645.0,
+    "delivered_freight": 153242.46,
+    "avg_order_value": 130.8,
+    "revenue_mom_growth_pct": 27.4
+  },
+  {
+    "year_month": "2018-02",
+    "orders_placed": 6728,
+    "delivered_orders": 6555,
+    "delivered_revenue": 826437.13,
+    "delivered_freight": 139731.28,
+    "avg_order_value": 126.08,
+    "revenue_mom_growth_pct": -10.6
+  },
+  {
+    "year_month": "2018-03",
+    "orders_placed": 7211,
+    "delivered_orders": 7003,
+    "delivered_revenue": 953356.25,
+    "delivered_freight": 167241.99,
+    "avg_order_value": 136.14,
+    "revenue_mom_growth_pct": 15.4
+  },
+  {
+    "year_month": "2018-04",
+    "orders_placed": 6939,
+    "delivered_orders": 6798,
+    "delivered_revenue": 973534.09,
+    "delivered_freight": 159344.84,
+    "avg_order_value": 143.21,
+    "revenue_mom_growth_pct": 2.1
+  },
+  {
+    "year_month": "2018-05",
+    "orders_placed": 6873,
+    "delivered_orders": 6749,
+    "delivered_revenue": 977544.69,
+    "delivered_freight": 151229.83,
+    "avg_order_value": 144.84,
+    "revenue_mom_growth_pct": 0.4
+  },
+  {
+    "year_month": "2018-06",
+    "orders_placed": 6167,
+    "delivered_orders": 6099,
+    "delivered_revenue": 856077.86,
+    "delivered_freight": 155900.43,
+    "avg_order_value": 140.36,
+    "revenue_mom_growth_pct": -12.4
+  },
+  {
+    "year_month": "2018-07",
+    "orders_placed": 6292,
+    "delivered_orders": 6159,
+    "delivered_revenue": 867953.46,
+    "delivered_freight": 159853.82,
+    "avg_order_value": 140.92,
+    "revenue_mom_growth_pct": 1.4
+  },
+  {
+    "year_month": "2018-08",
+    "orders_placed": 6512,
+    "delivered_orders": 6351,
+    "delivered_revenue": 838576.64,
+    "delivered_freight": 146915.0,
+    "avg_order_value": 132.04,
+    "revenue_mom_growth_pct": -3.4
+  }
+]

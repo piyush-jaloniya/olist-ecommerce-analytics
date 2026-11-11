@@ -1,0 +1,742 @@
+[
+  {
+    "category": "christmas_supplies",
+    "items_sold": 150,
+    "revenue": 8737.84,
+    "freight": 3190.91,
+    "avg_freight_per_item": 21.27,
+    "freight_pct_of_price": 36.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 1
+  },
+  {
+    "category": "signaling_and_security",
+    "items_sold": 197,
+    "revenue": 21315.05,
+    "freight": 6477.54,
+    "avg_freight_per_item": 32.88,
+    "freight_pct_of_price": 30.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 2
+  },
+  {
+    "category": "electronics",
+    "items_sold": 2729,
+    "revenue": 155043.93,
+    "freight": 45679.16,
+    "avg_freight_per_item": 16.74,
+    "freight_pct_of_price": 29.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 3
+  },
+  {
+    "category": "food_drink",
+    "items_sold": 269,
+    "revenue": 14942.88,
+    "freight": 4394.89,
+    "avg_freight_per_item": 16.34,
+    "freight_pct_of_price": 29.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 4
+  },
+  {
+    "category": "furniture_living_room",
+    "items_sold": 495,
+    "revenue": 67350.7,
+    "freight": 17694.37,
+    "avg_freight_per_item": 35.75,
+    "freight_pct_of_price": 26.3,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 5
+  },
+  {
+    "category": "drinks",
+    "items_sold": 361,
+    "revenue": 21529.84,
+    "freight": 5441.27,
+    "avg_freight_per_item": 15.07,
+    "freight_pct_of_price": 25.3,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 6
+  },
+  {
+    "category": "kitchen_dining_laundry_garden_furniture",
+    "items_sold": 274,
+    "revenue": 45531.98,
+    "freight": 11540.99,
+    "avg_freight_per_item": 42.12,
+    "freight_pct_of_price": 25.3,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 6
+  },
+  {
+    "category": "office_furniture",
+    "items_sold": 1668,
+    "revenue": 268154.31,
+    "freight": 67057.05,
+    "avg_freight_per_item": 40.2,
+    "freight_pct_of_price": 25.0,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 8
+  },
+  {
+    "category": "food",
+    "items_sold": 499,
+    "revenue": 28731.15,
+    "freight": 7063.53,
+    "avg_freight_per_item": 14.16,
+    "freight_pct_of_price": 24.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 9
+  },
+  {
+    "category": "furniture_decor",
+    "items_sold": 8160,
+    "revenue": 711927.69,
+    "freight": 168402.23,
+    "avg_freight_per_item": 20.64,
+    "freight_pct_of_price": 23.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 10
+  },
+  {
+    "category": "housewares",
+    "items_sold": 6795,
+    "revenue": 615628.69,
+    "freight": 142763.56,
+    "avg_freight_per_item": 21.01,
+    "freight_pct_of_price": 23.2,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 11
+  },
+  {
+    "category": "furniture_bedroom",
+    "items_sold": 103,
+    "revenue": 19051.8,
+    "freight": 4327.42,
+    "avg_freight_per_item": 42.01,
+    "freight_pct_of_price": 22.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 12
+  },
+  {
+    "category": "books_technical",
+    "items_sold": 263,
+    "revenue": 18702.23,
+    "freight": 4198.84,
+    "avg_freight_per_item": 15.97,
+    "freight_pct_of_price": 22.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 13
+  },
+  {
+    "category": "telephony",
+    "items_sold": 4430,
+    "revenue": 309860.23,
+    "freight": 69342.39,
+    "avg_freight_per_item": 15.65,
+    "freight_pct_of_price": 22.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 14
+  },
+  {
+    "category": "luggage_accessories",
+    "items_sold": 1077,
+    "revenue": 138701.63,
+    "freight": 30076.49,
+    "avg_freight_per_item": 27.93,
+    "freight_pct_of_price": 21.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 15
+  },
+  {
+    "category": "fashion_shoes",
+    "items_sold": 257,
+    "revenue": 23001.46,
+    "freight": 4813.37,
+    "avg_freight_per_item": 18.73,
+    "freight_pct_of_price": 20.9,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 16
+  },
+  {
+    "category": "costruction_tools_garden",
+    "items_sold": 232,
+    "revenue": 25096.28,
+    "freight": 5187.66,
+    "avg_freight_per_item": 22.36,
+    "freight_pct_of_price": 20.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 17
+  },
+  {
+    "category": "fashion_bags_accessories",
+    "items_sold": 1985,
+    "revenue": 149329.39,
+    "freight": 30558.9,
+    "avg_freight_per_item": 15.39,
+    "freight_pct_of_price": 20.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 18
+  },
+  {
+    "category": "garden_tools",
+    "items_sold": 4268,
+    "revenue": 470495.28,
+    "freight": 96650.4,
+    "avg_freight_per_item": 22.65,
+    "freight_pct_of_price": 20.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 18
+  },
+  {
+    "category": "stationery",
+    "items_sold": 2466,
+    "revenue": 223788.69,
+    "freight": 45786.36,
+    "avg_freight_per_item": 18.57,
+    "freight_pct_of_price": 20.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 18
+  },
+  {
+    "category": "fashion_underwear_beach",
+    "items_sold": 127,
+    "revenue": 9305.95,
+    "freight": 1854.07,
+    "avg_freight_per_item": 14.6,
+    "freight_pct_of_price": 19.9,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 21
+  },
+  {
+    "category": "bed_bath_table",
+    "items_sold": 10953,
+    "revenue": 1023434.76,
+    "freight": 201774.5,
+    "avg_freight_per_item": 18.42,
+    "freight_pct_of_price": 19.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 22
+  },
+  {
+    "category": "fashion_male_clothing",
+    "items_sold": 125,
+    "revenue": 10452.33,
+    "freight": 2062.62,
+    "avg_freight_per_item": 16.5,
+    "freight_pct_of_price": 19.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 22
+  },
+  {
+    "category": "industry_commerce_and_business",
+    "items_sold": 265,
+    "revenue": 38498.81,
+    "freight": 7580.53,
+    "avg_freight_per_item": 28.61,
+    "freight_pct_of_price": 19.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 22
+  },
+  {
+    "category": "books_general_interest",
+    "items_sold": 537,
+    "revenue": 45302.15,
+    "freight": 8880.39,
+    "avg_freight_per_item": 16.54,
+    "freight_pct_of_price": 19.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 25
+  },
+  {
+    "category": "market_place",
+    "items_sold": 305,
+    "revenue": 27795.77,
+    "freight": 5318.61,
+    "avg_freight_per_item": 17.44,
+    "freight_pct_of_price": 19.1,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 26
+  },
+  {
+    "category": "construction_tools_lights",
+    "items_sold": 301,
+    "revenue": 39957.0,
+    "freight": 7490.14,
+    "avg_freight_per_item": 24.88,
+    "freight_pct_of_price": 18.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 27
+  },
+  {
+    "category": "home_appliances",
+    "items_sold": 754,
+    "revenue": 78832.48,
+    "freight": 14469.3,
+    "avg_freight_per_item": 19.19,
+    "freight_pct_of_price": 18.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 28
+  },
+  {
+    "category": "pet_shop",
+    "items_sold": 1924,
+    "revenue": 211695.64,
+    "freight": 38918.56,
+    "avg_freight_per_item": 20.23,
+    "freight_pct_of_price": 18.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 28
+  },
+  {
+    "category": "sports_leisure",
+    "items_sold": 8431,
+    "revenue": 954852.55,
+    "freight": 163404.36,
+    "avg_freight_per_item": 19.38,
+    "freight_pct_of_price": 17.1,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 30
+  },
+  {
+    "category": "home_construction",
+    "items_sold": 596,
+    "revenue": 81407.57,
+    "freight": 13614.8,
+    "avg_freight_per_item": 22.84,
+    "freight_pct_of_price": 16.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 31
+  },
+  {
+    "category": "baby",
+    "items_sold": 2982,
+    "revenue": 400421.84,
+    "freight": 66305.81,
+    "avg_freight_per_item": 22.24,
+    "freight_pct_of_price": 16.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 32
+  },
+  {
+    "category": "art",
+    "items_sold": 197,
+    "revenue": 23657.3,
+    "freight": 3828.23,
+    "avg_freight_per_item": 19.43,
+    "freight_pct_of_price": 16.2,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 33
+  },
+  {
+    "category": "computers_accessories",
+    "items_sold": 7644,
+    "revenue": 888724.61,
+    "freight": 143999.16,
+    "avg_freight_per_item": 18.84,
+    "freight_pct_of_price": 16.2,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 33
+  },
+  {
+    "category": "toys",
+    "items_sold": 4030,
+    "revenue": 471286.48,
+    "freight": 75774.58,
+    "avg_freight_per_item": 18.8,
+    "freight_pct_of_price": 16.1,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 35
+  },
+  {
+    "category": "unknown",
+    "items_sold": 1537,
+    "revenue": 170726.63,
+    "freight": 26969.06,
+    "avg_freight_per_item": 17.55,
+    "freight_pct_of_price": 15.8,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 36
+  },
+  {
+    "category": "auto",
+    "items_sold": 4140,
+    "revenue": 578966.65,
+    "freight": 90488.1,
+    "avg_freight_per_item": 21.86,
+    "freight_pct_of_price": 15.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 37
+  },
+  {
+    "category": "health_beauty",
+    "items_sold": 9465,
+    "revenue": 1233131.72,
+    "freight": 178957.81,
+    "avg_freight_per_item": 18.91,
+    "freight_pct_of_price": 14.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 38
+  },
+  {
+    "category": "home_confort",
+    "items_sold": 429,
+    "revenue": 58008.45,
+    "freight": 8429.77,
+    "avg_freight_per_item": 19.65,
+    "freight_pct_of_price": 14.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 38
+  },
+  {
+    "category": "construction_tools_construction",
+    "items_sold": 916,
+    "revenue": 142108.49,
+    "freight": 20273.52,
+    "avg_freight_per_item": 22.13,
+    "freight_pct_of_price": 14.3,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 40
+  },
+  {
+    "category": "perfumery",
+    "items_sold": 3340,
+    "revenue": 390144.65,
+    "freight": 53026.98,
+    "avg_freight_per_item": 15.88,
+    "freight_pct_of_price": 13.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 41
+  },
+  {
+    "category": "cool_stuff",
+    "items_sold": 3718,
+    "revenue": 610204.1,
+    "freight": 81476.79,
+    "avg_freight_per_item": 21.91,
+    "freight_pct_of_price": 13.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 42
+  },
+  {
+    "category": "consoles_games",
+    "items_sold": 1089,
+    "revenue": 148003.37,
+    "freight": 19094.36,
+    "avg_freight_per_item": 17.53,
+    "freight_pct_of_price": 12.9,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 43
+  },
+  {
+    "category": "costruction_tools_tools",
+    "items_sold": 103,
+    "revenue": 15903.95,
+    "freight": 2030.22,
+    "avg_freight_per_item": 19.71,
+    "freight_pct_of_price": 12.8,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 44
+  },
+  {
+    "category": "air_conditioning",
+    "items_sold": 289,
+    "revenue": 53323.56,
+    "freight": 6530.99,
+    "avg_freight_per_item": 22.6,
+    "freight_pct_of_price": 12.2,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 45
+  },
+  {
+    "category": "audio",
+    "items_sold": 362,
+    "revenue": 50570.6,
+    "freight": 5684.72,
+    "avg_freight_per_item": 15.7,
+    "freight_pct_of_price": 11.2,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 46
+  },
+  {
+    "category": "musical_instruments",
+    "items_sold": 651,
+    "revenue": 184315.74,
+    "freight": 17871.38,
+    "avg_freight_per_item": 27.45,
+    "freight_pct_of_price": 9.7,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 47
+  },
+  {
+    "category": "construction_tools_safety",
+    "items_sold": 183,
+    "revenue": 38773.22,
+    "freight": 3730.8,
+    "avg_freight_per_item": 20.39,
+    "freight_pct_of_price": 9.6,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 48
+  },
+  {
+    "category": "home_appliances_2",
+    "items_sold": 231,
+    "revenue": 107953.95,
+    "freight": 10254.57,
+    "avg_freight_per_item": 44.39,
+    "freight_pct_of_price": 9.5,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 49
+  },
+  {
+    "category": "small_appliances",
+    "items_sold": 658,
+    "revenue": 182754.12,
+    "freight": 15354.35,
+    "avg_freight_per_item": 23.33,
+    "freight_pct_of_price": 8.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 50
+  },
+  {
+    "category": "watches_gifts",
+    "items_sold": 5859,
+    "revenue": 1166176.98,
+    "freight": 98156.14,
+    "avg_freight_per_item": 16.75,
+    "freight_pct_of_price": 8.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 50
+  },
+  {
+    "category": "fixed_telephony",
+    "items_sold": 255,
+    "revenue": 55315.21,
+    "freight": 4501.33,
+    "avg_freight_per_item": 17.65,
+    "freight_pct_of_price": 8.1,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 52
+  },
+  {
+    "category": "agro_industry_and_commerce",
+    "items_sold": 206,
+    "revenue": 70566.1,
+    "freight": 5637.2,
+    "avg_freight_per_item": 27.37,
+    "freight_pct_of_price": 8.0,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 53
+  },
+  {
+    "category": "computers",
+    "items_sold": 199,
+    "revenue": 218684.14,
+    "freight": 9665.62,
+    "avg_freight_per_item": 48.57,
+    "freight_pct_of_price": 4.4,
+    "meets_min_volume": 1,
+    "freight_burden_rank": 54
+  },
+  {
+    "category": "home_comfort_2",
+    "items_sold": 30,
+    "revenue": 760.27,
+    "freight": 410.31,
+    "avg_freight_per_item": 13.68,
+    "freight_pct_of_price": 54.0,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "flowers",
+    "items_sold": 33,
+    "revenue": 1110.04,
+    "freight": 488.87,
+    "avg_freight_per_item": 14.81,
+    "freight_pct_of_price": 44.0,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "furniture_mattress_and_upholstery",
+    "items_sold": 37,
+    "revenue": 4323.38,
+    "freight": 1581.37,
+    "avg_freight_per_item": 42.74,
+    "freight_pct_of_price": 36.6,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "diapers_and_hygiene",
+    "items_sold": 37,
+    "revenue": 1500.79,
+    "freight": 545.4,
+    "avg_freight_per_item": 14.74,
+    "freight_pct_of_price": 36.3,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "cds_dvds_musicals",
+    "items_sold": 14,
+    "revenue": 730.0,
+    "freight": 224.99,
+    "avg_freight_per_item": 16.07,
+    "freight_pct_of_price": 30.8,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "dvds_blu_ray",
+    "items_sold": 61,
+    "revenue": 4542.59,
+    "freight": 1227.25,
+    "avg_freight_per_item": 20.12,
+    "freight_pct_of_price": 27.0,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "fashion_sport",
+    "items_sold": 29,
+    "revenue": 2094.52,
+    "freight": 563.03,
+    "avg_freight_per_item": 19.41,
+    "freight_pct_of_price": 26.9,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "fashio_female_clothing",
+    "items_sold": 45,
+    "revenue": 2634.94,
+    "freight": 583.5,
+    "avg_freight_per_item": 12.97,
+    "freight_pct_of_price": 22.1,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "arts_and_craftmanship",
+    "items_sold": 24,
+    "revenue": 1814.01,
+    "freight": 370.13,
+    "avg_freight_per_item": 15.42,
+    "freight_pct_of_price": 20.4,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "cine_photo",
+    "items_sold": 70,
+    "revenue": 6674.47,
+    "freight": 1227.71,
+    "avg_freight_per_item": 17.54,
+    "freight_pct_of_price": 18.4,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "party_supplies",
+    "items_sold": 42,
+    "revenue": 4465.19,
+    "freight": 820.19,
+    "avg_freight_per_item": 19.53,
+    "freight_pct_of_price": 18.4,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "books_imported",
+    "items_sold": 57,
+    "revenue": 4418.86,
+    "freight": 732.08,
+    "avg_freight_per_item": 12.84,
+    "freight_pct_of_price": 16.6,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "tablets_printing_image",
+    "items_sold": 83,
+    "revenue": 7528.41,
+    "freight": 1226.2,
+    "avg_freight_per_item": 14.77,
+    "freight_pct_of_price": 16.3,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "la_cuisine",
+    "items_sold": 14,
+    "revenue": 2054.99,
+    "freight": 333.55,
+    "avg_freight_per_item": 23.82,
+    "freight_pct_of_price": 16.2,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "fashion_childrens_clothes",
+    "items_sold": 7,
+    "revenue": 519.95,
+    "freight": 78.72,
+    "avg_freight_per_item": 11.25,
+    "freight_pct_of_price": 15.1,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "security_and_services",
+    "items_sold": 2,
+    "revenue": 283.29,
+    "freight": 41.22,
+    "avg_freight_per_item": 20.61,
+    "freight_pct_of_price": 14.6,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "music",
+    "items_sold": 38,
+    "revenue": 6034.35,
+    "freight": 690.51,
+    "avg_freight_per_item": 18.17,
+    "freight_pct_of_price": 11.4,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "pc_gamer",
+    "items_sold": 8,
+    "revenue": 1306.95,
+    "freight": 123.15,
+    "avg_freight_per_item": 15.39,
+    "freight_pct_of_price": 9.4,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "portable_kitchen_and_food_preparers",
+    "items_sold": 14,
+    "revenue": 3933.63,
+    "freight": 294.42,
+    "avg_freight_per_item": 21.03,
+    "freight_pct_of_price": 7.5,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  },
+  {
+    "category": "small_appliances_home_oven_and_coffee",
+    "items_sold": 73,
+    "revenue": 46589.56,
+    "freight": 2656.34,
+    "avg_freight_per_item": 36.39,
+    "freight_pct_of_price": 5.7,
+    "meets_min_volume": 0,
+    "freight_burden_rank": null
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "year": 2017,
+    "orders_placed": 22968,
+    "delivered_orders": 21998,
+    "delivered_revenue": 2993456.13,
+    "delivered_freight": 479442.12,
+    "avg_order_value": 136.08,
+    "orders_growth_pct": null,
+    "revenue_growth_pct": null
+  },
+  {
+    "year": 2018,
+    "orders_placed": 53991,
+    "delivered_orders": 52783,
+    "delivered_revenue": 7218125.12,
+    "delivered_freight": 1233459.65,
+    "avg_order_value": 136.75,
+    "orders_growth_pct": 135.1,
+    "revenue_growth_pct": 141.1
+  }
+]
